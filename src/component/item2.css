@@ -1,0 +1,17 @@
+.expense{
+    border-right: 5px solid red;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    padding: 10px;
+    display: flex;
+   
+    margin: 10px 0;
+  }
+  
+.income{
+    border-right: 5px solid green;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    padding: 10px;
+    display: flex;
+   
+    margin: 10px 0;
+  }
