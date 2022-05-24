@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import { useState , useEffect } from 'react'
 import './formStyle.css'
 import { v4 as uuidv4 } from 'uuid';
   function Form(props){
   
     const [title,setTitle] = useState('')
     const [amount,setAmount] = useState(0)
+    const [formValid,setFormValid] = useState(false)
 
       const inputTitle =(event)=>{
           setTitle(event.target.value)
@@ -25,7 +26,10 @@ import { v4 as uuidv4 } from 'uuid';
           setTitle('')
           setAmount(0)
       }
-
+      useEffect(()=>{
+          const checkData = title.trim().length>0 && amount!==0
+              setFormValid(checkData)
+      },[title,amount])
       return(
         <div>
             <form onSubmit={saveItem}>
@@ -40,7 +44,7 @@ import { v4 as uuidv4 } from 'uuid';
                         onChange={inputAmount} value={amount}></input>
                 </div>
                 <div>
-                       <button className='btn' type="submit">ADD</button>
+                       <button className='btn' disabled={!formValid} type="submit">ADD</button>
                 </div>
             </form>
         </div>

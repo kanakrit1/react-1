@@ -17,8 +17,8 @@ input{
 }
 
 .btn{
-    background-color: purple;
-    color: #fff;
+    /* background-color: purple;
+    color: #fff; */
     display: block;
     margin:  10px 0 30px;
     padding: 6px;
